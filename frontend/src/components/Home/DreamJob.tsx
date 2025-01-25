@@ -41,15 +41,15 @@ const DreamJob = () => {
             </div>
             <Avatar.Group>
               <Avatar
-                src="https://avatars.githubusercontent.com/u/1027843?v=4"
+                src="https://avatars.githubusercontent.com/u/1"
                 radius="xl"
               />
               <Avatar
-                src="https://avatars.githubusercontent.com/u/1027843?v=4"
+                src="https://avatars.githubusercontent.com/u/2"
                 radius="xl"
               />
               <Avatar
-                src="https://avatars.githubusercontent.com/u/1027843?v=4"
+                src="https://avatars.githubusercontent.com/u/3"
                 radius="xl"
               />
               <Avatar>+9k</Avatar>
