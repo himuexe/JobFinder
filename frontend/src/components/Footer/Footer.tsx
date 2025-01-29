@@ -22,7 +22,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({
   <a
     href={href}
     className="flex items-center gap-2 text-mine-shaft-300 hover:text-clairt-400 
-    transition-all duration-300 group font-primary"
+    transition-all duration-300 group "
   >
     {Icon && (
       <Icon className="w-4 h-4 text-clairt-400 group-hover:text-clairt-400 transition-colors" />
@@ -57,30 +57,30 @@ const Footer: React.FC = () => {
   const socialIcons: SocialIconProps[] = [
     {
       Icon: Facebook,
-      href: "https://facebook.com/utsavia",
+      href: "https://facebook.com/jobFinder",
       label: "Facebook",
     },
     {
       Icon: Instagram,
-      href: "https://instagram.com/utsavia",
+      href: "https://instagram.com/jobFinder",
       label: "Instagram",
     },
     {
       Icon: Twitter,
-      href: "https://twitter.com/utsavia",
+      href: "https://twitter.com/jobFinder",
       label: "Twitter",
     },
     {
       Icon: Linkedin,
-      href: "https://linkedin.com/company/utsavia",
+      href: "https://linkedin.com/company/jobFinder",
       label: "LinkedIn",
     },
   ];
 
   return (
     <footer
-      className="bg-mine-shaft-950 mt-20 text-mine-shaft-100 py-16 px-6 overflow-hidden relative"
-      aria-label="Utsavia Footer"
+      className="bg-mine-shaft-950  pt-20 text-mine-shaft-100 py-16 px-6 overflow-hidden relative"
+      aria-label="jobFinder Footer"
     >
       <div className="container mx-auto max-w-6xl grid md:grid-cols-4 gap-8 relative z-10">
         {/* Company Logo and Tagline */}
@@ -96,7 +96,7 @@ const Footer: React.FC = () => {
 
         {/* Explore Links */}
         <div className="md:col-span-1">
-          <h3 className="text-xl font-semibold mb-4 text-mine-shaft-100 font-secondary">
+          <h3 className="text-xl font-semibold mb-4 text-mine-shaft-100 ">
             Explore
           </h3>
           <nav className="space-y-3">
@@ -109,7 +109,7 @@ const Footer: React.FC = () => {
 
         {/* Contact Information */}
         <div className="md:col-span-1">
-          <h3 className="text-xl font-semibold mb-4 text-mine-shaft-100 font-secondary">
+          <h3 className="text-xl font-semibold mb-4 text-mine-shaft-100 ">
             Connect
           </h3>
           <div className="space-y-3">
@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
 
         {/* Social Media */}
         <div className="md:col-span-1 flex flex-col space-y-4">
-          <h3 className="text-xl font-semibold mb-4 text-mine-shaft-100 font-secondary">
+          <h3 className="text-xl font-semibold mb-4 text-mine-shaft-100 ">
             Follow Us
           </h3>
           <div className="flex space-x-6">
@@ -140,10 +140,10 @@ const Footer: React.FC = () => {
         className="mt-12 pt-6 border-t border-mine-shaft-700 
           text-center text-mine-shaft-300 text-sm relative z-10"
       >
-        <p className="flex items-center justify-center gap-2 font-secondary">
+        <p className="flex items-center justify-center gap-2 ">
           © {new Date().getFullYear()} Job Finder Pvt. Ltd.
         </p>
-        <div className="mt-2 space-x-4 font-secondary">
+        <div className="mt-2 space-x-4 ">
           <a
             href="/privacy"
             className="hover:text-clairt-400 transition-colors"
