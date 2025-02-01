@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import FindJobs from './pages/FindJobs';
 import Layout from './layout/Layout';
+import FindTalent from './pages/FindTalent';
 
 export default function App() {
   const theme = createTheme({
@@ -20,6 +21,7 @@ export default function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/find-jobs' element={<Layout><FindJobs /></Layout>} />
+        <Route path='/find-talent' element={<Layout><FindTalent/></Layout>} />
         <Route path='*' element={<Layout><HomePage /></Layout>} />
       </Routes>
       </BrowserRouter>
