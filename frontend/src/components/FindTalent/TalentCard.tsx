@@ -48,7 +48,7 @@ const TalentCard = (props: any) => {
       </div>
       <Divider size="xs" color="mine-shaft.7" />
       <div className="flex [&>*]:w-1/2 [&>*]:p-1">
-        <Link to="talent-profile">
+        <Link to="/talent-profile">
         <Button color="clairt.4"  variant="outline" fullWidth>Profile</Button>
         </Link>
         <div className="">
