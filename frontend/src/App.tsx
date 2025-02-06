@@ -9,6 +9,7 @@ import Layout from './layout/Layout';
 import FindTalent from './pages/FindTalent';
 import TalentProfile from './pages/TalentProfile';
 import PostJob from './pages/PostJob';
+import JobDescPage from './pages/JobDescPage';
 
 export default function App() {
   const theme = createTheme({
@@ -26,6 +27,7 @@ export default function App() {
       <BrowserRouter>
       <Routes>
         <Route path='/find-jobs' element={<Layout><FindJobs /></Layout>} />
+        <Route path='/jobs' element={<Layout><JobDescPage /></Layout>} />
         <Route path='/find-talent' element={<Layout><FindTalent/></Layout>} />
         <Route path='/post-jobs' element={<Layout><PostJob/></Layout>} />
         <Route path='/talent-profile' element={<Layout><TalentProfile/></Layout>} />

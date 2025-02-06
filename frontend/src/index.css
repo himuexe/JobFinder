@@ -22,11 +22,17 @@
     --color-clairt-700: #862ba0;
     --color-clairt-800: #6f2583;
     --color-clairt-900: #5e236c;
-    --color-clairt-950: #430d50;
-    
-    
-    
-    
-    
-    
+    --color-clairt-950: #430d50;   
+}
+@layer base{
+    ul,ol{
+        list-style: revert;
+        font-size: medium;
+    }
+    p{
+        font-size: medium;
+    }
+    li{
+        margin-left: 1em;
+    }
 }
