@@ -3,43 +3,42 @@ import { work } from "../../data/Data";
 
 const Working = () => {
   return (
-    <div className="mt-20 pb-5">
-      {/* Heading Section */}
-      <div className="text-3xl md:text-4xl text-center font-semibold mb-3 text-mine-shaft-100">
-        How it<span className="text-clairt-400"> works</span>
-      </div>
-      <div className="text-base md:text-lg mb-10 mx-auto text-mine-shaft-300 text-center w-full md:w-1/2 px-4">
+    <section className="container mx-auto px-4 md:px-6">
+      <h2 className="text-3xl md:text-4xl text-center font-semibold mb-4 text-mine-shaft-100">
+        How it <span className="text-clairt-400">works</span>
+      </h2>
+      
+      <p className="text-base md:text-lg mb-12 text-mine-shaft-300 text-center max-w-2xl mx-auto">
         Effortlessly find, apply and get hired with our easy-to-use platform.
-      </div>
+      </p>
 
-      {/* Content Section */}
-      <div className="flex flex-col lg:flex-row px-4 sm:px-8 lg:px-16 justify-between items-center">
-        {/* Image Section */}
-        <div className="relative w-full lg:w-auto">
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-12">
+        <div className="relative w-full lg:w-1/2">
           <img
-            className="w-full lg:w-[30rem]"
+            className="w-full max-w-xl mx-auto"
             src="/working/Girl.png"
-            alt="girl"
+            alt="Process illustration"
           />
-          {/* Profile Completion Card */}
-          <div className="w-36 flex absolute top-[15%] right-0 lg:right-[-10%] flex-col items-center gap-1 border border-clairt-400 rounded-xl py-3 px-1 backdrop-blur-md">
-            <Avatar
-              className="!h-16 !w-16"
-              src="https://avatars.githubusercontent.com/u/39"
-              radius="xl"
-            />
-            <div className="text-sm font-semibold text-mine-shaft-200 text-center">
-              Complete your Profile
+          
+          <div className="absolute top-1/4 right-0 lg:-right-8 bg-mine-shaft-950/80 border border-clairt-400 rounded-xl p-4 backdrop-blur-sm w-44">
+            <div className="flex flex-col items-center gap-2">
+              <Avatar
+                src="https://avatars.githubusercontent.com/u/39"
+                radius="xl"
+                size="xl"
+              />
+              <h3 className="text-sm font-semibold text-mine-shaft-200 text-center">
+                Complete your Profile
+              </h3>
+              <p className="text-xs text-mine-shaft-300">70% completed</p>
             </div>
-            <div className="text-xs text-mine-shaft-300">70% completed</div>
           </div>
         </div>
 
-        {/* Steps Section */}
-        <div className="flex flex-col gap-10 w-full lg:w-auto mt-10 lg:mt-0">
+        <div className="w-full lg:w-1/2 space-y-8">
           {work.map((item, index) => (
-            <div key={index} className="flex items-center gap-4">
-              <div className="p-2.5 bg-clairt-300 rounded-full">
+            <div key={index} className="flex items-start gap-6">
+              <div className="p-3 bg-clairt-300 rounded-full shrink-0">
                 <img
                   className="h-12 w-12"
                   src={`/working/${item.name}.png`}
@@ -47,16 +46,18 @@ const Working = () => {
                 />
               </div>
               <div>
-                <div className="text-mine-shaft-200 text-xl font-semibold">
+                <h3 className="text-xl text-mine-shaft-200 font-semibold mb-2">
                   {item.name}
-                </div>
-                <div className="text-mine-shaft-300">{item.desc}</div>
+                </h3>
+                <p className="text-mine-shaft-300 leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,21 +1,18 @@
-
 import { talents } from "../../data/TalentData";
 import Sort from "../FindJobs/Sort";
 import TalentCard from "./TalentCard";
 
 const Talents = () => {
   return (
-    <div className="p-5">
-      <div className="flex flex-col md:flex-row justify-between">
+    <div className="py-8">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-8">
         <div className="text-2xl font-semibold">Talents</div>
         <Sort />
       </div>
-      <div className="mt-10 flex md:flex-row flex-col gap-5 flex-wrap">
-        {
-            talents.map((talent, index) => (
-                <TalentCard key={index} {...talent} />
-            ))
-        }
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {talents.map((talent, index) => (
+          <TalentCard key={index} {...talent} />
+        ))}
       </div>
     </div>
   );

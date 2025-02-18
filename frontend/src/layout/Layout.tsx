@@ -8,12 +8,18 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className="bg-mine-shaft-950 min-h-screen font-['poppins']  flex flex-col">
+    <div className="bg-mine-shaft-950 min-h-screen font-['Poppins'] flex flex-col">
       <Header />
-      <Divider size="xs" mx={{ base: 0, md: "md" }} />
-      <div className="flex-1"> {children}</div>
+      <Divider 
+        size="xs" 
+        className="mx-0 md:mx-4 opacity-20" 
+      />
+      <main className="flex-1 container mx-auto px-4 md:px-6 py-8">
+        {children}
+      </main>
       <Footer />
     </div>
   );
 };
+
 export default Layout;

@@ -1,7 +1,7 @@
 const CertiCard = (props: any) => {
   return (
-    <div className="flex flex-col md:flex-row justify-between gap-2">
-      <div className="flex gap-2 items-center">
+    <div className="flex flex-col md:flex-row justify-between gap-4">
+      <div className="flex gap-3 items-center">
         <div className="p-2 bg-mine-shaft-800 rounded-md">
           <img className="h-7" src={`/Icons/${props.issuer}.png`} alt="" />
         </div>

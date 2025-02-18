@@ -11,7 +11,7 @@ const Card = (props: any) => {
   return (
     <Link
       to="/jobs"
-      className="bg-mine-shaft-900 p-4 w-full sm:w-72 flex flex-col gap-3 rounded-xl hover:shadow-[0_0_5px_1px_] !shadow-clairt-400"
+      className="bg-mine-shaft-900 p-4 flex flex-col gap-3 rounded-xl hover:shadow-[0_0_5px_1px_] !shadow-clairt-400 transition-shadow duration-300"
     >
       <div className="flex justify-between">
         <div className="flex gap-2 items-center">
@@ -53,12 +53,10 @@ const Card = (props: any) => {
           {props.postedDaysAgo} Days ago
         </div>
       </div>
-      {
-        props.offered || props.interviewing &&
+      {(props.offered || props.interviewing) && (
         <Divider size="xs" color="mine-shaft.7" />
-      }
-      {
-        props.offered &&
+      )}
+      {props.offered && (
         <div className="flex gap-2">
           <Button color="clairt.4" variant="outline" fullWidth>
             Accept
@@ -67,13 +65,13 @@ const Card = (props: any) => {
             Reject
           </Button>
         </div>
-      }
-      {
-        props.interviewing &&
+      )}
+      {props.interviewing && (
         <div className="flex gap-1 text-sm items-center">
-        <IconCalendarMonth className="text-clairt-400 w-5 h-5" stroke={1.5} /> Sun, 25 August &bull; <span className="text-mine-shaft-400">10:00 AM</span>
-      </div>
-      }
+          <IconCalendarMonth className="text-clairt-400 w-5 h-5" stroke={1.5} /> Sun, 25 August &bull;{" "}
+          <span className="text-mine-shaft-400">10:00 AM</span>
+        </div>
+      )}
     </Link>
   );
 };

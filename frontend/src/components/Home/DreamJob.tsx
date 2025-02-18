@@ -1,78 +1,87 @@
-import { Avatar, TextInput } from "@mantine/core";
-import HomeImg from "../../assets/home.png";
+import { TextInput } from "@mantine/core";
 import { IconSearch } from "@tabler/icons-react";
+import HomeImg from "../../assets/home.png";
 import GoogleImg from "../../assets/google.png";
 
 const DreamJob = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center px-4 md:px-16 py-8 gap-8">
-      <div className="flex flex-col w-full md:w-[45%] gap-3">
-        <div className="text-4xl md:text-6xl font-bold text-mine-shaft-100 leading-tight [&>span]:text-clairt-400">
-          Find your <span>Dream </span> <span>Job</span> with us !
+    <section className="container mx-auto px-4 md:px-6 py-12">
+      <div className="flex flex-col md:flex-row items-center gap-12">
+        {/* Left Content */}
+        <div className="flex flex-col w-full md:w-1/2 gap-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-mine-shaft-100 leading-tight">
+            Find your <span className="text-clairt-400">Dream Job</span> with us!
+          </h1>
+          
+          <p className="text-lg text-mine-shaft-200">
+            Good life begins with a good company. Start exploring thousands of jobs
+            in one place.
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-4">
+            <TextInput
+              className="flex-1 bg-mine-shaft-900 rounded-lg p-1 px-2 text-mine-shaft-100 [&_input]:!text-mine-shaft-100"
+              variant="unstyled"
+              label="Job Title"
+              placeholder="Software Engineer"
+            />
+            <TextInput
+              className="flex-1 bg-mine-shaft-900 rounded-lg p-1 px-2 text-mine-shaft-100 [&_input]:!text-mine-shaft-100"
+              variant="unstyled"
+              label="Job Type"
+              placeholder="Full Time"
+            />
+            <button className="h-12 md:w-16 bg-clairt-400 text-mine-shaft-100 rounded-lg flex items-center justify-center hover:bg-clairt-500 transition-colors">
+              <IconSearch className="h-6 w-6" />
+            </button>
+          </div>
         </div>
-        <div className="text-lg text-mine-shaft-200">
-          Good life begins with a good company. Start exploring thousands of jobs
-          in one place.
-        </div>
-        <div className="flex flex-col md:flex-row gap-3 mt-5">
-          <TextInput
-            className="bg-mine-shaft-900 rounded-lg p-1 px-2 text-mine-shaft-100 [&_input]:!text-mine-shaft-100 w-full"
-            variant="unstyled"
-            label="Job Title"
-            placeholder="Software Engineer"
-          />
-          <TextInput
-            className="bg-mine-shaft-900 rounded-lg p-1 px-2 text-mine-shaft-100 [&_input]:!text-mine-shaft-100 w-full"
-            variant="unstyled"
-            label="Job Type"
-            placeholder="Full Time"
-          />
-          <div className="flex items-center justify-center h-12 w-full md:w-20 bg-clairt-400 text-mine-shaft-100 rounded-lg p-2 hover:bg-clairt-500 cursor-pointer">
-            <IconSearch className="h-6 w-6" />
+
+        {/* Right Content */}
+        <div className="w-full md:w-1/2">
+          <div className="relative max-w-2xl mx-auto">
+            <img src={HomeImg} alt="Job search illustration" className="w-full h-auto" />
+            
+            {/* Job Stats Card */}
+            <div className="absolute -right-2 md:-right-8 top-1/2 transform -translate-y-1/2 bg-mine-shaft-950/80 border-clairt-400 border rounded-lg p-4 backdrop-blur-sm">
+              <p className="text-center mb-2 text-sm text-mine-shaft-100">
+                10k+ got jobs
+              </p>
+              <div className="flex -space-x-2">
+                {[1, 2, 3].map((id) => (
+                  <img
+                    key={id}
+                    className="w-8 h-8 rounded-full border-2 border-mine-shaft-950"
+                    src={`https://avatars.githubusercontent.com/u/${id}`}
+                    alt={`User ${id}`}
+                  />
+                ))}
+                <span className="w-8 h-8 rounded-full bg-mine-shaft-800 text-mine-shaft-100 flex items-center justify-center text-xs border-2 border-mine-shaft-950">
+                  +9k
+                </span>
+              </div>
+            </div>
+
+            {/* Job Post Card */}
+            <div className="absolute -left-2 md:-left-8 top-1/4 bg-mine-shaft-950/80 border-clairt-400 border rounded-lg p-4 backdrop-blur-sm">
+              <div className="flex gap-3 items-center">
+                <div className="w-12 h-12 p-2 bg-mine-shaft-900 rounded-lg flex items-center justify-center">
+                  <img src={GoogleImg} alt="Google" className="w-full h-auto" />
+                </div>
+                <div>
+                  <h3 className="text-mine-shaft-100 font-medium">Software Engineer</h3>
+                  <p className="text-mine-shaft-200 text-sm">Chennai</p>
+                </div>
+              </div>
+              <div className="flex justify-between mt-3 text-mine-shaft-200 text-xs">
+                <span>1 day ago</span>
+                <span>120 Applicants</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div className="w-full md:w-[55%] flex items-center justify-center">
-        <div className="w-full max-w-[50rem] relative">
-          <img src={HomeImg} alt="" className="w-full h-auto" />
-          <div className="absolute -right-2 md:-right-10 w-fit top-[50%] border-clairt-400 border rounded-lg p-2 backdrop-blur-md">
-            <div className="text-center mb-1 text-sm text-mine-shaft-100">
-              10k+ got jobs
-            </div>
-            <Avatar.Group>
-              <Avatar
-                src="https://avatars.githubusercontent.com/u/1"
-                radius="xl"
-              />
-              <Avatar
-                src="https://avatars.githubusercontent.com/u/2"
-                radius="xl"
-              />
-              <Avatar
-                src="https://avatars.githubusercontent.com/u/3"
-                radius="xl"
-              />
-              <Avatar>+9k</Avatar>
-            </Avatar.Group>
-          </div>
-          <div className="absolute -left-2 md:-left-5 w-fit top-[28%] border-clairt-400 border rounded-lg p-2 backdrop-blur-md gap-3 flex flex-col">
-            <div className="flex gap-2 items-center ">
-              <div className="w-10 h-10 p-1 bg-mine-shaft-900 rounded-lg">
-                <img src={GoogleImg} alt="google svg" />
-              </div>
-              <div className="text-sm text-mine-shaft-100">
-                <div className="">Software Engineer</div>
-                <div className="text-mine-shaft-200 text-xs">Chennai</div>
-              </div>
-            </div>
-            <div className="flex gap-2 justify-around text-mine-shaft-200 text-xs">
-              <span>1 day ago</span>
-              <span>120 Applicants</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
   );
 };
 

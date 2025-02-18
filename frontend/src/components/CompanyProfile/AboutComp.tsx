@@ -15,8 +15,7 @@ const AboutComp = () => {
                     ? company[key]
                     : company[key].map((item: string, index: number) => (
                         <span key={index}>  
-                         
-                               &bull;    {item}
+                          &bull; {item}
                         </span>
                       ))}
                 </div>

@@ -3,42 +3,38 @@ import { testimonials } from "../../data/Data";
 
 const Testimonials = () => {
   return (
-    <div className="mt-20 pb-5 px-4 sm:px-8">
-      {/* Heading Section */}
-      <div className="text-3xl md:text-4xl text-center font-semibold mb-3 text-mine-shaft-100">
-        What <span className="text-clairt-400">Users</span> says about us?
-      </div>
+    <section className="container mx-auto px-4 md:px-6">
+      <h2 className="text-3xl md:text-4xl text-center font-semibold mb-4 text-mine-shaft-100">
+        What <span className="text-clairt-400">Users</span> say about us?
+      </h2>
 
-      {/* Testimonials Section */}
-      <div className="flex flex-col lg:flex-row justify-center gap-6 lg:gap-4 xl:gap-6 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
         {testimonials.map((testimony, index) => (
           <div
             key={index}
-            className="w-full lg:w-[23%] border border-clairt-400 p-3 rounded-xl"
+            className="border border-clairt-400 p-6 rounded-xl hover:shadow-lg transition-all duration-300"
           >
-            {/* User Info and Rating */}
-            <div className="flex gap-2 items-center">
+            <div className="flex items-start gap-4">
               <Avatar
-                className="!h-16 !w-16"
                 src={`https://avatars.githubusercontent.com/u/${index}`}
                 radius="xl"
+                size="xl"
               />
               <div>
-                <div className="text-lg text-mine-shaft-100 font-semibold">
+                <h3 className="text-lg text-mine-shaft-100 font-semibold mb-1">
                   {testimony.name}
-                </div>
-                <Rating value={testimony.rating} readOnly fractions={2} />
+                </h3>
+                <Rating value={testimony.rating} readOnly fractions={2} size="sm" />
               </div>
             </div>
-
-            {/* Testimonial Text */}
-            <div className="text-xs text-mine-shaft-300 mt-3">
+            
+            <p className="text-sm text-mine-shaft-300 mt-4 leading-relaxed">
               {testimony.testimonial}
-            </div>
+            </p>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

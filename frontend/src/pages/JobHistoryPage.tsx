@@ -1,16 +1,15 @@
-import { Divider } from "@mantine/core"
-import JobHistory from "../components/Job History/JobHistory"
-
+import { Divider } from "@mantine/core";
+import JobHistory from "../components/Job History/JobHistory";
 
 const JobHistoryPage = () => {
   return (
-    <div className="">
-        <Divider size={"xs"} />
-        <div className=" gap-5 my-5">
-            <JobHistory/>
-        </div>
+    <div className="container mx-auto px-4 md:px-6 py-8">
+      <Divider size="xs" />
+      <div className="my-5">
+        <JobHistory />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default JobHistoryPage
+export default JobHistoryPage;

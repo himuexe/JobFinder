@@ -5,12 +5,12 @@ import { card, desc } from "../../data/JobDescData";
 import { skills } from "../../data/JobDescData";
 import DOMPurify from "dompurify";
 
-const JobDesc = (props:any) => {
+const JobDesc = (props: any) => {
   const data = DOMPurify.sanitize(desc);
   return (
-    <div className="">
-      <div className="flex justify-between">
-        <div className="flex gap-2 items-center">
+    <div className="space-y-8">
+      <div className="flex flex-col md:flex-row justify-between gap-4">
+        <div className="flex gap-4 items-center">
           <div className="p-3 bg-mine-shaft-800 rounded-xl">
             <img className="h-14" src={`/Icons/Google.png`} alt="" />
           </div>
@@ -21,20 +21,23 @@ const JobDesc = (props:any) => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-2 items-center">
+        <div className="flex flex-row gap-4 items-center ">
           <Link to="/apply-job">
             <Button color="clairt.4" size="sm" variant="light">
               {props.edit ? "Edit" : "Apply"}
             </Button>
           </Link>
-
-          {props.edit?<Button color="red.5" size="sm" variant="outline">
+          {props.edit ? (
+            <Button color="red.5" size="sm" variant="outline">
               Delete
-            </Button>: <IconBookmark className="text-clairt-400 hover:cursor-pointer" />}
+            </Button>
+          ) : (
+            <IconBookmark className="text-clairt-400 hover:cursor-pointer" />
+          )}
         </div>
       </div>
       <Divider my="xl" />
-      <div className="flex justify-between">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {card.map((item: any, index: any) => (
           <div key={index} className="flex flex-col items-center gap-1">
             <ActionIcon
@@ -51,8 +54,8 @@ const JobDesc = (props:any) => {
         ))}
       </div>
       <Divider my="xl" />
-      <div className="">
-        <div className="text-xl font-semibold  mb-5">Required Skills</div>
+      <div className="space-y-4">
+        <div className="text-xl font-semibold">Required Skills</div>
         <div className="flex flex-wrap gap-2">
           {skills.map((item: any, index: any) => (
             <ActionIcon
@@ -74,31 +77,29 @@ const JobDesc = (props:any) => {
         className="[&_h4]:text-xl [&_*]:text-mine-shaft-300 [&_li]:mb-1 [&_li]:marker:text-clairt-400 [&_h4]:my-5 [&_h4]:font-semibold [&_h4]:text-mine-shaft-200 [&_p]:text-justify"
       ></div>
       <Divider my="xl" />
-      <div className="">
-        <div className="text-xl font-semibold  mb-5">About Company</div>
-        <div className="flex justify-between mb-3">
-          <div className="flex gap-2 items-center">
+      <div className="space-y-4">
+        <div className="text-xl font-semibold">About Company</div>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex gap-4 items-center">
             <div className="p-3 bg-mine-shaft-800 rounded-xl">
               <img className="h-8" src={`/Icons/Google.png`} alt="" />
             </div>
-            <div className="flex flex-col ">
+            <div className="flex flex-col">
               <div className="font-medium text-lg">Google</div>
-              <div className=" text-mine-shaft-300">
-                10k+ employees
-              </div>
+              <div className="text-mine-shaft-300">10k+ employees</div>
             </div>
           </div>
-      
-            <Link to="/company">
-              <Button color="clairt.4"  variant="light">
-                Company Page
-              </Button>
-            </Link>
-
-          </div>
-          <div className="text-mine-shaft-300 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, cupiditate enim architecto sit magnam vitae fugit sunt omnis natus illum adipisci pariatur asperiores aspernatur dolores? Quia voluptatum recusandae, ab commodi nostrum nihil expedita saepe mollitia animi officiis dolore libero iure!</div>
+          <Link to="/company">
+            <Button color="clairt.4" variant="light">
+              Company Page
+            </Button>
+          </Link>
+        </div>
+        <div className="text-mine-shaft-300 text-justify">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, cupiditate enim architecto sit magnam vitae fugit sunt omnis natus illum adipisci pariatur asperiores aspernatur dolores? Quia voluptatum recusandae, ab commodi nostrum nihil expedita saepe mollitia animi officiis dolore libero iure!
         </div>
       </div>
+    </div>
   );
 };
 

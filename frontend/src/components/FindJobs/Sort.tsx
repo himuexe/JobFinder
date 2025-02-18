@@ -2,41 +2,57 @@ import { useState } from 'react';
 import { ActionIcon, Combobox, useCombobox } from '@mantine/core';
 import { IconAdjustments } from '@tabler/icons-react';
 
-const opt = ['Relevance', 'Most Recent', 'Salary(Low to High)', 'Salary(High to Low)'];
+const sortOptions = [
+  'Relevance',
+  'Most Recent',
+  'Salary (Low to High)',
+  'Salary (High to Low)'
+];
 
 const Sort = () => {
-  const [selectedItem, setSelectedItem] = useState<string | null>('Relevance');
+  const [selected, setSelected] = useState('Relevance');
   const combobox = useCombobox({
     onDropdownClose: () => combobox.resetSelectedOption(),
   });
 
-  const options = opt.map((item) => (
-    <Combobox.Option className='!text-xs' value={item} key={item}>
-      {item}
-    </Combobox.Option>
-  ));
-
   return (
     <Combobox
       store={combobox}
-      width={150}
-      position="bottom-start"
-      onOptionSubmit={(val) => {
-        setSelectedItem(val);
+      width={200}
+      position="bottom-end"
+      onOptionSubmit={(value) => {
+        setSelected(value);
         combobox.closeDropdown();
       }}
     >
       <Combobox.Target>
-        <div onClick={() => combobox.toggleDropdown()} className="cursor-pointer border border-clairt-400 flex gap-2 text-sm items-center p-2 rounded-xl">
-          {selectedItem} 
-          <ActionIcon color="clairt.4" variant='transparent' aria-label='Setttings'>
-          <IconAdjustments className='h-5 w-5 text-clairt-400' />
+        <button
+          onClick={() => combobox.toggleDropdown()}
+          className="flex items-center gap-2 px-4 py-2 border border-clairt-400 rounded-xl hover:bg-mine-shaft-900 transition-colors"
+        >
+          <span className="text-sm text-mine-shaft-100">{selected}</span>
+          <ActionIcon 
+            color="clairt.4" 
+            variant="transparent"
+            aria-label="Sort options"
+          >
+            <IconAdjustments className="h-5 w-5" />
           </ActionIcon>
-        </div>
+        </button>
       </Combobox.Target>
 
       <Combobox.Dropdown>
-        <Combobox.Options>{options}</Combobox.Options>
+        <Combobox.Options>
+          {sortOptions.map((option) => (
+            <Combobox.Option 
+              key={option} 
+              value={option}
+              className="text-sm py-2"
+            >
+              {option}
+            </Combobox.Option>
+          ))}
+        </Combobox.Options>
       </Combobox.Dropdown>
     </Combobox>
   );

@@ -1,13 +1,12 @@
 import { Avatar, Divider, Tabs } from "@mantine/core";
-import {  IconMapPin } from "@tabler/icons-react";
+import { IconMapPin } from "@tabler/icons-react";
 import AboutComp from "./AboutComp";
 import CompanyJobs from "./CompanyJobs";
 import CompanyEmployees from "./CompanyEmployees";
 
 const Company = () => {
-  
   return (
-    <div className="w-3/4">
+    <div className="w-full md:w-3/4">
       <div className="relative">
         <img className="rounded-t-2xl w-full" src="/Banner.jpg" alt="" />
         <img
@@ -32,18 +31,18 @@ const Company = () => {
         </div>
       </div>
       <Divider my="xl" />
-      <div className=" ">
-      <Tabs variant="outline" radius="lg" defaultValue={"about"}>
-      <Tabs.List className="[&_button]:!text-lg mb-5 font-semibold [&_button[data-active=true]]:!text-clairt-400">
-        <Tabs.Tab value="about">About</Tabs.Tab>
-        <Tabs.Tab value="jobs">Jobs</Tabs.Tab>
-        <Tabs.Tab value="employees">Employees</Tabs.Tab>
-      </Tabs.List>
+      <div>
+        <Tabs variant="outline" radius="lg" defaultValue={"about"}>
+          <Tabs.List className="[&_button]:!text-lg mb-5 font-semibold [&_button[data-active=true]]:!text-clairt-400">
+            <Tabs.Tab value="about">About</Tabs.Tab>
+            <Tabs.Tab value="jobs">Jobs</Tabs.Tab>
+            <Tabs.Tab value="employees">Employees</Tabs.Tab>
+          </Tabs.List>
 
-      <Tabs.Panel value="about"><AboutComp/></Tabs.Panel>
-      <Tabs.Panel value="jobs"><CompanyJobs/></Tabs.Panel>
-      <Tabs.Panel value="employees"><CompanyEmployees/></Tabs.Panel>
-    </Tabs>
+          <Tabs.Panel value="about"><AboutComp /></Tabs.Panel>
+          <Tabs.Panel value="jobs"><CompanyJobs /></Tabs.Panel>
+          <Tabs.Panel value="employees"><CompanyEmployees /></Tabs.Panel>
+        </Tabs>
       </div>
     </div>
   );
