@@ -1,7 +1,8 @@
-import { Avatar, Indicator } from "@mantine/core";
+import { Indicator } from "@mantine/core";
 import { IconAsset, IconBell, IconSettings } from "@tabler/icons-react";
-import AvatarImg from "../../assets/avatar.png";
+
 import NavLinks from "./NavLinks";
+import ProfileMenu from "./ProfileMenu";
 
 const Header = () => {
   return (
@@ -16,11 +17,7 @@ const Header = () => {
           <NavLinks />
           
           <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-3">
-              <span className="text-mine-shaft-100">Himanshu</span>
-              <Avatar src={AvatarImg} size="md" radius="xl" />
-            </div>
-            
+            <ProfileMenu/>            
             <button className="bg-mine-shaft-900 p-2.5 rounded-full hover:bg-mine-shaft-800 transition-colors">
               <IconSettings className="h-5 w-5 text-mine-shaft-100" />
             </button>
