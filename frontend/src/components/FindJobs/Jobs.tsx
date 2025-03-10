@@ -14,7 +14,11 @@ const Jobs = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {jobList.map((job, index) => (
-          <JobCard key={index} {...job} />
+          <JobCard
+            key={index}
+            {...job}
+            applicants={job.applicants.toString()}
+          />
         ))}
       </div>
     </div>
